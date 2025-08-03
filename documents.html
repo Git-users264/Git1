@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="style" href="style.css">
+    <script src="5.js"></script>
+    <h1 style="text-align:center">college registration</h1>
+</head>
+<body>
+      <form name="regform" method="post" onsubmit="return
+validateform();">
+        <label for="name">NAME:</label>
+        <input type="text" id="name" name="name" pattern="[A-Za-z\s]+"
+title="Please use only letters">
+        <br><br>
+        <label for="mail">EMAIL:</label>
+        <input type="email" id="mail" name="mail">
+        <br><br>
+        <label for="pwd">PASSWORD: </label>
+        <input type="password" id="pwd" name="pwd">
+        <br><br>
+        <label for="pno">PHONE NUMBER: </label>
+        <input type="text" id="pno" name="pno" pattern="[0-9\s]+"
+title="Please use only digit">
+        <br><br>
+        <label for="age">AGE:</label>
+        <input type="text" id="age" name="age" pattern="[0-9\s]+"
+title="Please use only digit">
+        <br><br>
+        <button type="submit">Submit</button>
+       </form>
+
+     <script>
+         function validateform() {
+             var name document.regform.name.value.trim();
+             var email document.regform.mail.value.trim();
+             var password document.regform.pwd.value.trim();
+             var pnumber document.regform.pno.value.trim();
+             var age document.regform.age.value.trim();
+
+             if (name === "") {
+                 alert("Name cannot be blank");
+                 return false;
+             }
+             if (email == "") {
+                 alert("email cannot be blank");
+                 return false;
+             }
+             if (password.length < 6 || password ==="") {
+                 alert("Password cannot be blank");
+                 return false;
+	     }
+             if (pnumber.length !== 10 || isNaN(phumber) || pnumber === "" ) {
+                 alert("pnumber cannot be blank or must be exactly 10 digits");
+                 return false;
+             }
+             if (isNaN(age) || age < 11 || age > 60 || age"") {
+                 alert("age cannot be blank");
+                 return false;
+             }
+             return true;
+          }
+    </script>
+</body>
+</html>
